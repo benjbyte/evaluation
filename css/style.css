@@ -1,0 +1,508 @@
+
+:root {
+    --halloween-orange: #ff6600;
+    --halloween-purple: #660066;
+    --halloween-black: #222222;
+    --halloween-green: #44ff00;
+}
+
+/* Add these new styles */
+body {
+    background: linear-gradient(
+        135deg,
+        var(--halloween-black) 0%,
+        var(--halloween-purple) 50%,
+        var(--halloween-black) 100%
+    );
+    min-height: 100vh;
+    margin: 0;
+}
+
+.mdl-layout__content {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.mdl-mini-footer {
+    background-color: var(--halloween-black) !important;
+    padding: 16px;
+    color: var(--halloween-orange);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.mdl-mini-footer .mdl-logo {
+    color: var(--halloween-orange);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Update existing table styles to match the new background */
+.table-responsive {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some hover effect to the footer text */
+.mdl-mini-footer .mdl-logo:hover {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.mdl-layout__header {
+    background-color: var(--halloween-black) !important;
+}
+
+.mdl-layout__header-row {
+    background-color: var(--halloween-black);
+}
+
+.team-header {
+    background-color: var(--halloween-orange);
+    color: var(--halloween-black);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.mdl-data-table {
+    width: 100%;
+    white-space: normal;
+    border: 2px solid var(--halloween-purple);
+}
+
+.mdl-data-table thead {
+    background-color: var(--halloween-purple);
+}
+
+.mdl-data-table th {
+    color: white !important;
+}
+
+.mdl-data-table tbody tr:hover {
+    background-color: rgba(255, 102, 0, 0.1) !important;
+}
+/* Update table cell width and padding */
+.mdl-data-table td {
+    padding: 0 8px !important;
+    text-align: left !important;
+}
+
+
+/* Specific widths for different columns */
+.mdl-data-table th:nth-child(1), /* Name */
+.mdl-data-table td:nth-child(1) {
+    width: 120px;
+    text-align: center !important;
+}
+
+.mdl-data-table th:nth-child(2), /* Image */
+.mdl-data-table td:nth-child(2) {
+    width: 80px;
+    text-align: center !important;
+}
+
+.mdl-data-table th:nth-child(n+3):nth-child(-n+9), /* Score columns */
+.mdl-data-table td:nth-child(n+3):nth-child(-n+9) {
+    width: 100px;
+}
+
+.mdl-data-table th:last-child, /* Total column */
+.mdl-data-table td:last-child {
+    width: 80px;
+    text-align: center !important;
+}
+
+/* .score-input {
+    width: 60px;
+    border: 2px solid var(--halloween-purple);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.score-input:focus {
+    border-color: var(--halloween-orange);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+} */
+/* Update the input styles */
+.score-input {
+    width: 100%;
+    padding: 4px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--halloween-purple);
+    font-size: 16px;
+    text-align: left;
+    transition: all 0.3s ease;
+    color: var(--halloween-black);
+    margin: 8px 0;
+}
+
+.score-input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--halloween-orange);
+    box-shadow: none;
+}
+
+/* Add Material Design floating label effect */
+.score-input-container {
+    position: relative;
+    padding: 0 4px;
+}
+
+.score-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.score-input:focus::placeholder {
+    color: var(--halloween-orange);
+}
+
+.thumbnail {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid var(--halloween-purple);
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    border-color: var(--halloween-orange);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border: 3px solid var(--halloween-orange);
+    border-radius: 8px;
+}
+
+/* Make sure tables are responsive */
+.table-responsive {
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Total column highlighting */
+.total {
+    font-weight: bold;
+    color: var(--halloween-orange);
+}
+
+/* Add some spacing between tables */
+.mdl-cell--12-col {
+    padding: 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--halloween-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--halloween-orange);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--halloween-purple);
+}
+
+/* Add these styles for the team header */
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.team-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.team-header h4 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.evaluator-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.evaluator-section .mdl-textfield {
+    flex: 1;
+}
+
+.evaluator-section .mdl-button {
+    background: var(--halloween-orange);
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.mdl-textfield {
+    width: 100%;
+    max-width: 300px;
+}
+
+.evaluator-section .mdl-button:hover {
+    background: var(--halloween-purple);
+}
+
+/* For mobile devices */
+@media screen and (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .button-container .mdl-button {
+        width: 100%;
+    }
+    
+    .mdl-textfield {
+        max-width: 100%;
+    }
+}
+
+/* Update button styles */
+.evaluator-section .mdl-button--accent {
+    background: var(--halloween-purple);
+    color: white;
+}
+
+.evaluator-section .mdl-button--accent:hover {
+    background: #4a004a;
+}
+
+
+/* Add animation for reset */
+@keyframes fadeOut {
+    from { background-color: rgba(255, 102, 0, 0.1); }
+    to { background-color: transparent; }
+}
+
+.reset-flash {
+    animation: fadeOut 1s ease-out;
+}
+
+
+/* Dialog styles */
+.mdl-dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 24px;
+    min-width: 300px;
+}
+
+.mdl-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.mdl-dialog__title {
+    color: var(--halloween-black);
+    margin: 0 0 20px 0;
+}
+
+/* .mdl-dialog__content {
+    color: rgba(0, 0, 0, 0.7);
+    padding: 0;
+    margin-bottom: 24px;
+} */
+
+
+
+.mdl-dialog__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+/* 
+.mdl-dialog__actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    padding: 0;
+} */
+
+.mdl-dialog__actions {
+    justify-content: center;
+    padding: 0;
+}
+
+.mdl-dialog__actions .mdl-button--colored {
+    background: var(--halloween-orange);
+}
+
+.mdl-dialog__actions .close {
+    color: var(--halloween-purple);
+}
+
+
+.notification-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.notification-icon::before {
+    font-family: 'Material Icons';
+    font-size: 32px;
+    color: white;
+}
+
+/* Success state */
+.success .notification-icon {
+    background-color: #43a047;
+}
+
+.success .notification-icon::before {
+    content: "check_circle";
+}
+
+/* Error state */
+.error .notification-icon {
+    background-color: #d32f2f;
+}
+
+.error .notification-icon::before {
+    content: "error";
+}
+
+/* Add animation for dialog */
+/* @keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+} */
+
+/* Animation for dialog */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+#notificationMessage {
+    color: var(--halloween-black);
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Style for OK button */
+#notificationOk {
+    min-width: 100px;
+}
+
+.success #notificationOk {
+    background-color: #43a047;
+}
+
+.error #notificationOk {
+    background-color: #d32f2f;
+}
+
+.mdl-dialog[open] {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Add styles for required field */
+.mdl-textfield__label::after {
+    color: var(--halloween-orange);
+}
+
+.mdl-textfield.is-invalid .mdl-textfield__label {
+    color: #d50000;
+}
+
+.mdl-textfield.is-invalid .mdl-textfield__input {
+    border-color: #d50000;
+}
+
+.mdl-textfield__error {
+    color: #d50000;
+    visibility: hidden;
+    position: absolute;
+    bottom: -20px;
+    font-size: 12px;
+}
+
+.mdl-textfield.is-invalid .mdl-textfield__error {
+    visibility: visible;
+}
+
+/* Add shake animation for invalid submit */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.6s ease-in-out;
+}
